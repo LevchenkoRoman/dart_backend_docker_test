@@ -24,7 +24,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: dart-lang/setup-dart@v1.3
       - run: dart pub get
-      - run: dart compile exe bin/mycli.dart -o mycli
+      - run: dart compile exe bin/mycli.dart
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
