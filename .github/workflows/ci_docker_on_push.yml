@@ -22,7 +22,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-      - uses: dart-lang/setup-dart@v1
+      - uses: dart-lang/setup-dart@v1.3
       - run: dart pub get
       - run: dart compile exe bin/mycli.dart -o mycli
 
