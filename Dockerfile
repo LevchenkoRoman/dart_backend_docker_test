@@ -3,7 +3,7 @@ FROM dart:stable AS build
 
 # Resolve app dependencies.
 RUN mkdir /root/.ssh && chmod 0700 /root/.ssh
-RUN ssh-keyscan -t rsa git@github.com > ~/.ssh/known_hosts
+RUN ssh-keyscan -t rsa github.com > ~/.ssh/known_hosts
 WORKDIR /app
 COPY pubspec.* ./
 RUN dart pub get
