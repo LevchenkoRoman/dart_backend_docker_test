@@ -2,6 +2,7 @@
 FROM dart:stable AS build
 
 # Resolve app dependencies.
+RUN ssh-keyscan -t rsa github.com > ~/.ssh/known_hosts
 WORKDIR /app
 COPY pubspec.* ./
 RUN dart pub get
