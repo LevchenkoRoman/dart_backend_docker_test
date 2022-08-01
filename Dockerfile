@@ -10,6 +10,7 @@ RUN mkdir /root/.ssh && chmod 0700 /root/.ssh
 #RUN ssh-keyscan -t rsa github.com > ~/.ssh/known_hosts
 RUN ssh-keyscan github.com >> ~/.ssh/known_hosts
 RUN --mount=type=ssh ssh -q -T git@github.com 2>&1 | tee /hello
+RUN eval $(ssh-agent -s)
 WORKDIR /app
 COPY pubspec.* ./
 RUN dart pub get
