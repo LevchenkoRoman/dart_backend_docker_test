@@ -3,9 +3,10 @@ FROM dart:stable AS build
 
 # Resolve app dependencies.
 RUN mkdir /root/.ssh && chmod 0700 /root/.ssh
-RUN echo "${SSH_PRIVATE_KEY}" > /root/.ssh/id_rsa
-RUN chmod 400 ~/.ssh/id_rsa
+#RUN echo "${SSH_PRIVATE_KEY}" > /root/.ssh/id_rsa
+#RUN chmod 400 ~/.ssh/id_rsa
 RUN ssh-keyscan -t rsa github.com > ~/.ssh/known_hosts
+RUN --mount=type=ssh ssh -q -T git@gitlab.com 2>&1 | tee /hello
 WORKDIR /app
 COPY pubspec.* ./
 RUN dart pub get
