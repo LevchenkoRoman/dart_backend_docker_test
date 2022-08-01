@@ -15,3 +15,7 @@ dev_dependencies:
   http: ^0.13.0
   lints: ^2.0.0
   test: ^1.15.0
+  itrappmodels:
+    git:
+      url: git@github.com:itrapp-develop/itrapp-models.git
+      ref: eda3294059b394d6a5f3b859d1d329f5d0c79fe7
