@@ -31,7 +31,6 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          image: dart_backend_docker_test
           tags:  ghcr.io/levchenkoroman/dart_backend_docker_test,dart_backend_docker_test
           registry: ghcr.io
           username: ${{ github.repository_owner }}
