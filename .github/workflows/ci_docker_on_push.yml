@@ -38,3 +38,12 @@ jobs:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Delete old images
+        uses: snok/container-retention-policy@v1
+        with:
+          image-names: dart_backend_docker_test*
+          keep-at-least: 2
+          account-type: personal #org or personal
+          token: ${{ secrets.GITHUB_TOKEN }}
+          cut-off: now
