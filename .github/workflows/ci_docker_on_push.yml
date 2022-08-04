@@ -46,4 +46,4 @@ jobs:
           keep-at-least: 2
           account-type: personal #org or personal
           token: ${{ secrets.GITHUB_TOKEN }}
-          cut-off: now
+          cut-off: now UTC
