@@ -45,5 +45,5 @@ jobs:
           image-names: dart_backend_docker_test*
           keep-at-least: 2
           account-type: personal #org or personal
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PAT_TOKEN }}
           cut-off: now UTC
