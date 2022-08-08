@@ -54,6 +54,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           WITH_V: true
           DEFAULT_BUMP: none
+          DRY_RUN: true
           RELEASE_BRANCHES: master
           INITIAL_VERSION: 1.0.0
           VERBOSE: true
