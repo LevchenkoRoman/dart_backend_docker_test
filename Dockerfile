@@ -19,4 +19,4 @@ COPY --from=build /app/bin/server.dill /app/bin/server.dill
 
 # Start server.
 #EXPOSE 8080 - for inner container access, not needed is using -p (publish ports)
-CMD ["dart","/app/bin/server.dill"]
+CMD ["dart","run","/app/bin/server.dill"]
