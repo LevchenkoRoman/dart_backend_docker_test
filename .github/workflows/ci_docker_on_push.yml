@@ -66,6 +66,7 @@ jobs:
           cut-off: now UTC
 
       - name: Release
-        uses: softprops/action-gh-release@v1
+        uses: ncipollo/release-action@v1
         with:
-          tag_name: ${{ steps.versionTag.outputs.new_tag }}
+          tag: ${{ steps.versionTag.outputs.new_tag }}
+          allowUpdates: true
