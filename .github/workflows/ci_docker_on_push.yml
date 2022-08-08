@@ -13,6 +13,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+      - with:
+          fetch-depth: '0'
 
       - name: Bump version and push tag
         id: versionTag
@@ -24,6 +26,7 @@ jobs:
           RELEASE_BRANCHES: master #todo change
           INITIAL_VERSION: 1.0.0
           VERBOSE: true
+          DRY_RUN: true #todo check if needed
 
       - uses: webfactory/ssh-agent@v0.5.4
         with:
