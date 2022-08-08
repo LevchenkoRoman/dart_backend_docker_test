@@ -57,4 +57,3 @@ jobs:
           RELEASE_BRANCHES: master
           INITIAL_VERSION: 1.0.0
           VERBOSE: true
-
