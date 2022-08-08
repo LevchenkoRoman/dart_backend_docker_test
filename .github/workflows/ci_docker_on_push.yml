@@ -24,7 +24,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           WITH_V: false
           DEFAULT_BUMP: none
-          RELEASE_BRANCHES: master #todo change
+          RELEASE_BRANCHES: master #todo  change
           INITIAL_VERSION: 1.0.0
           VERBOSE: true
           TAG_CONTEXT: repo #repo/branch
