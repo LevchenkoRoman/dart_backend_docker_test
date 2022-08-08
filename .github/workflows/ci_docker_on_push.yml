@@ -12,7 +12,19 @@ jobs:
     timeout-minutes: 10
 
     steps:
+      - name: Bump version and push tag
+        id: versionTag
+        uses: anothrNick/github-tag-action@1.36.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WITH_V: false
+          DEFAULT_BUMP: none
+          RELEASE_BRANCHES: master #todo change
+          INITIAL_VERSION: 1.0.0
+          VERBOSE: true
+
       - uses: actions/checkout@v3
+
       - uses: webfactory/ssh-agent@v0.5.4
         with:
           ssh-private-key: ${{ secrets.SSH_KEY }}
@@ -34,7 +46,7 @@ jobs:
             default=${{ env.SSH_AUTH_SOCK }}
           push: true
           image: dart_backend_docker_test
-          tags:  ghcr.io/levchenkoroman/dart_backend_docker_test
+          tags:  ghcr.io/levchenkoroman/dart_backend_docker_test:${{ steps.versionTag.outputs.tag }}
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
@@ -47,13 +59,3 @@ jobs:
           account-type: personal #org or personal
           token: ${{ secrets.PAT_TOKEN }}
           cut-off: now UTC
-      - name: Bump version and push tag
-        uses: anothrNick/github-tag-action@1.36.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          WITH_V: true
-          DEFAULT_BUMP: none
-          DRY_RUN: true
-          RELEASE_BRANCHES: master
-          INITIAL_VERSION: 1.0.0
-          VERBOSE: true
