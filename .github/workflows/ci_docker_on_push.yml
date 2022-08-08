@@ -63,4 +63,3 @@ jobs:
           account-type: personal #org or personal
           token: ${{ secrets.PAT_TOKEN }}
           cut-off: now UTC
-
