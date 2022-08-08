@@ -16,7 +16,7 @@ RUN dart compile kernel bin/server.dart -o bin/server.dill
 FROM dart:stable
 #COPY --from=build /runtime/ /
 COPY --from=build /app/bin/server.dill /app/bin/server.dill
-
+WORKDIR /app/bin
 # Start server.
 #EXPOSE 8080 - for inner container access, not needed is using -p (publish ports)
-CMD ["dart","run","/app/bin/server.dill"]
+CMD ["dart","run","server.dill"]
