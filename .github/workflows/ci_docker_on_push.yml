@@ -63,6 +63,7 @@ jobs:
           account-type: personal #org or personal
           token: ${{ secrets.PAT_TOKEN }}
           cut-off: now UTC
+
       - name: Release
         uses: ncipollo/release-action@v1
         with:
