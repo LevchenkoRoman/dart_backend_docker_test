@@ -64,12 +64,12 @@ jobs:
           token: ${{ secrets.PAT_TOKEN }}
           cut-off: now UTC
 
-      - name: Release
-        uses: ncipollo/release-action@v1
-        with:
-          tag: ${{ steps.versionTag.outputs.new_tag }}
-          allowUpdates: true
-
+#      - name: Release
+#        uses: ncipollo/release-action@v1
+#        with:
+#          tag: ${{ steps.versionTag.outputs.new_tag }}
+#          allowUpdates: true
+#
 
 
 ## end
