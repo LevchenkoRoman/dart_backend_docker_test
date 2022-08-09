@@ -18,7 +18,7 @@ jobs:
 
       - name: Bump version and push tag
         id: versionTag
-        uses: sbe-arg/github-tag-action@1.39.7 #using spe-arg fork, until main action will be fixed
+        uses: anothrNick/github-tag-action@1.39.0 #using spe-arg fork, until main action will be fixed
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           WITH_V: false
