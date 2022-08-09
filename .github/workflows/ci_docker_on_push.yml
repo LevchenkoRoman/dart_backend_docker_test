@@ -60,7 +60,7 @@ jobs:
         with:
           image-names: dart_backend_docker_test*
           keep-at-least: 2
-          account-type: personal #org or personal
+          account-type: personal #org or  personal
           token: ${{ secrets.PAT_TOKEN }}
           cut-off: now UTC
 
