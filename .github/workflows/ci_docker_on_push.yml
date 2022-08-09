@@ -27,7 +27,7 @@ jobs:
           INITIAL_VERSION: 1.0.0
           VERBOSE: true
           TAG_CONTEXT: repo #repo/branch
-          DRY_RUN: false
+          DRY_RUN: true
 
       - uses: webfactory/ssh-agent@v0.5.4
         with:
